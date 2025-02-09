@@ -9,7 +9,7 @@ from utils.pipeline_animatediff import AnimateDiffPipeline
 def is_image_file(filename):
     return any(filename.endswith(extension) for extension in ['.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG'])
 # model_paras
-base_model_path = "sd-legacy/stable-diffusion-v1-5"
+base_model_path = "stable-diffusion-v1-5/stable-diffusion-v1-5"
 image_encoder_path = "models/image_encoder"
 adapter = MotionAdapter.from_pretrained("motion_v1-5-2")  # animate_diff model path
 vae_path = "vae_ft"  # recommended vae from animate_diff
