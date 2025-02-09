@@ -9,7 +9,7 @@ def is_image_file(filename):
     return any(filename.endswith(extension) for extension in ['.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG'])
 
 # Initialize the model
-base_model_path = "sd_model_v1-5"
+base_model_path = "sd-legacy/stable-diffusion-v1-5"
 image_encoder_path = "models/image_encoder"
 base_ssr = "./models/ssr_model"
 ssr_ckpt = [base_ssr+"/pytorch_model.bin",

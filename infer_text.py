@@ -6,7 +6,7 @@ from ssr_encoder import SSR_encoder
 from diffusers.utils import load_image
 
 # Initialize the model
-base_model_path = "sd_model_v1-5"
+base_model_path = "stable-diffusion-v1-5/stable-diffusion-v1-5"
 image_encoder_path = "models/image_encoder"
 base_ssr = "./models/ssr_model"
 ssr_ckpt = [base_ssr+"/pytorch_model.bin",
@@ -28,8 +28,9 @@ if __name__ == '__main__':
     out_path = "./results"
     subject = "flower"
     scale = 0.65  # The recommended parameters are 0.5-0.8, Default value is 0.65
-    prompts = "A girl holding flowers"
-    negative_prompt = "bad quality"
+    prompts = "A girl holding a bouquet of vibrant flowers at the beach, wearing a stylish hat and trendy sunglasses, with the ocean breeze gently tousling her hair"
+    prompts = prompts + "best quality, high resolution"
+    negative_prompt = "bad quality, blur, ugly"
 
     pil_img = load_image(img_path)
     images = ssr_model.generate(

@@ -9,8 +9,8 @@ def is_image_file(filename):
     return any(filename.endswith(extension) for extension in ['.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG'])
 
 # model_paras
-controlnet_path = "control_v11f1p_sd15_depth"  # your controlnet path
-base_model_path = "sd_model_v1-5"  # your sd15 path
+controlnet_path = "lllyasviel/control_v11f1p_sd15_depth"  # your controlnet path
+base_model_path = "sd-legacy/stable-diffusion-v1-5"  # your sd15 path
 image_encoder_path = "models/image_encoder"
 base_ssr = "./models/ssr_model"
 ssr_ckpt = [base_ssr+"/pytorch_model.bin",

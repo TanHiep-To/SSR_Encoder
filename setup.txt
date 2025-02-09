@@ -1,0 +1,19 @@
+conda create -n SSR_Encoder python=3.9
+source activate SSR_Encoder
+
+python -m pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
+
+python -m pip install -r requirements.txt
+
+# Dowload checkpoint
+gdown --folder -O models https://drive.google.com/drive/folders/1pMwzGRA8QzHjEH5Hc4zDwdsSDwjwQKMW
+
+#Download clip
+from huggingface_hub import snapshot_download
+import os
+
+destination = "models/image_encoder"
+
+os.makedirs(destination, exist_ok=True)
+
+snapshot_download(repo_id="openai/clip-vit-large-patch14", local_dir=destination)
